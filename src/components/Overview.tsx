@@ -34,6 +34,9 @@ const LiveChart: React.FunctionComponent<LiveChartProps> = ({
       })}
     >
       <div className={classes.drawerHeader} />
+      <h2>
+      {t('title.overview')}
+      </h2>
 
       {overviewData && <TypeChooser>
 				{(type: any) => <Chart type={"hybrid"} data={overviewData} width={1000} refetch={fetchHistoricalData} />}

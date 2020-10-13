@@ -5,7 +5,6 @@ import { useStyles } from "./helpers/navigationMenuHelper";
 import NavigationMenu from "./components/NavigationMenu";
 import LiveChart from "./components/LiveChart";
 import Overview from "./components/Overview";
-import { OHLCData } from "./models/OHLCData";
 
 import "./App.css";
 

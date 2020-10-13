@@ -3,5 +3,9 @@
     "navigationMenu": {
         "liveChart": "Live Chart",
         "overview": "Overview"
+    },
+    "title": {
+        "live": "Live OHLC Data",
+        "overview": "Historical OHLC Data"
     }
 }

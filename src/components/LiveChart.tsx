@@ -46,7 +46,9 @@ const LiveChart: React.FunctionComponent<LiveChartProps> = ({
       })}
     >
       <div className={classes.drawerHeader} />
-
+      <h2>
+      {t('title.live')}
+      </h2>
       {liveData && liveData.length > 1 && <TypeChooser>
 				{(type: any) => <Chart type={type} data={liveData} width={1000} />}
 			</TypeChooser>}
