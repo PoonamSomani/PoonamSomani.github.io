@@ -68,7 +68,6 @@ class OHLCChartWithElderImpulseIndicator extends React.Component {
     const start = xAccessor(last(data));
     const end = xAccessor(data[Math.max(0, data.length - 150)]);
     const xExtents = [start, end];
-
     return (
       <ChartCanvas
         height={500}
@@ -95,7 +94,7 @@ class OHLCChartWithElderImpulseIndicator extends React.Component {
           <XAxis
             axisAt="bottom"
             orient="bottom"
-            showTicks={false}
+            showTicks={true}
             outerTickSize={0}
             zoomEnabled={true}
           />
@@ -122,7 +121,7 @@ class OHLCChartWithElderImpulseIndicator extends React.Component {
           />
 
           <OHLCTooltip origin={[-40, -10]} />
-          <ZoomButtons onReset={refetch}/>
+          <ZoomButtons onReset={refetch} />
           <MovingAverageTooltip
             onClick={(e) => console.log(e)}
             origin={[-38, 5]}
@@ -168,7 +167,7 @@ OHLCChartWithElderImpulseIndicator.propTypes = {
   width: PropTypes.number.isRequired,
   ratio: PropTypes.number.isRequired,
   type: PropTypes.oneOf(["svg", "hybrid"]).isRequired,
-  refetch: PropTypes.func
+  refetch: PropTypes.func,
 };
 
 OHLCChartWithElderImpulseIndicator.defaultProps = {

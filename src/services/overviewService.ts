@@ -11,7 +11,7 @@ export function getHistoricalData() {
   };
   return axios(requestParamObj)
     .then((response) => {
-      return response.data.map((ohlcData: any) => new OHLCData(ohlcData));
+      return response.data.map((ohlcData) => new OHLCData(ohlcData));
     })
     .catch((error) => {});
 }

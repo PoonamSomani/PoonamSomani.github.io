@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@material-ui/core/styles";
@@ -18,8 +18,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import clsx from "clsx";
 import Typography from "@material-ui/core/Typography";
 
-import { TRANSLATION_TYPES, menuItems} from "../constants/appConstants";
+import { TRANSLATION_TYPES, menuItems } from "../../constants/appConstants";
 
+import "./NavigationMenu.css";
 
 interface NavigationMenuProps {
   handleMenu: (open: boolean) => void;
@@ -43,7 +44,7 @@ const NavigationMenu: React.FunctionComponent<NavigationMenuProps> = ({
     handleMenu(false);
   };
 
-  const handleNavigation = (text: string) => {
+  const handleNavigation = () => {
     handleMenu(false);
   };
 
@@ -66,8 +67,10 @@ const NavigationMenu: React.FunctionComponent<NavigationMenuProps> = ({
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap >
-            <Link to="/" style={{'color': 'white', 'textDecoration': 'none'}}>{t(`appName`)}</Link>
+          <Typography variant="h6" noWrap>
+            <Link to="/" className="whiteColor noTextDecoration">
+              {t(`appName`)}
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -95,8 +98,8 @@ const NavigationMenu: React.FunctionComponent<NavigationMenuProps> = ({
             <Link
               to={item.link}
               key={item.text}
-              onClick={() => handleNavigation(t(item.text))}
-              style={{'textDecoration': 'none'}}
+              onClick={handleNavigation}
+              className="noTextDecoration"
             >
               <ListItem button>
                 <ListItemIcon>{item.icon}</ListItemIcon>
